@@ -9,21 +9,27 @@
 /* Begin PBXBuildFile section */
 		848D9F36284A2415008CDF7F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848D9F35284A2415008CDF7F /* AppDelegate.swift */; };
 		848D9F38284A2415008CDF7F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848D9F37284A2415008CDF7F /* SceneDelegate.swift */; };
-		848D9F3A284A2415008CDF7F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848D9F39284A2415008CDF7F /* ViewController.swift */; };
 		848D9F3D284A2415008CDF7F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 848D9F3B284A2415008CDF7F /* Main.storyboard */; };
 		848D9F3F284A2417008CDF7F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 848D9F3E284A2417008CDF7F /* Assets.xcassets */; };
 		848D9F42284A2417008CDF7F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 848D9F40284A2417008CDF7F /* LaunchScreen.storyboard */; };
+		848D9F4E284A3956008CDF7F /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848D9F4D284A3956008CDF7F /* OnboardingViewController.swift */; };
+		848D9F51284A3CCB008CDF7F /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848D9F50284A3CCB008CDF7F /* UIView+Extension.swift */; };
+		848D9F53284A3F61008CDF7F /* OnboardingSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848D9F52284A3F61008CDF7F /* OnboardingSlide.swift */; };
+		848D9F55284A42C4008CDF7F /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848D9F54284A42C4008CDF7F /* OnboardingCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		848D9F32284A2415008CDF7F /* Yummie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Yummie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		848D9F35284A2415008CDF7F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		848D9F37284A2415008CDF7F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		848D9F39284A2415008CDF7F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		848D9F3C284A2415008CDF7F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		848D9F3E284A2417008CDF7F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		848D9F41284A2417008CDF7F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		848D9F43284A2417008CDF7F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		848D9F4D284A3956008CDF7F /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		848D9F50284A3CCB008CDF7F /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		848D9F52284A3F61008CDF7F /* OnboardingSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSlide.swift; sourceTree = "<group>"; };
+		848D9F54284A42C4008CDF7F /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +62,58 @@
 		848D9F34284A2415008CDF7F /* Yummie */ = {
 			isa = PBXGroup;
 			children = (
+				848D9F4F284A3C9B008CDF7F /* Extensions */,
+				848D9F4B284A38E6008CDF7F /* CustomViews */,
+				848D9F4A284A38CD008CDF7F /* Views */,
+				848D9F49284A3855008CDF7F /* Models */,
 				848D9F35284A2415008CDF7F /* AppDelegate.swift */,
 				848D9F37284A2415008CDF7F /* SceneDelegate.swift */,
-				848D9F39284A2415008CDF7F /* ViewController.swift */,
 				848D9F3B284A2415008CDF7F /* Main.storyboard */,
 				848D9F3E284A2417008CDF7F /* Assets.xcassets */,
 				848D9F40284A2417008CDF7F /* LaunchScreen.storyboard */,
 				848D9F43284A2417008CDF7F /* Info.plist */,
 			);
 			path = Yummie;
+			sourceTree = "<group>";
+		};
+		848D9F49284A3855008CDF7F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				848D9F52284A3F61008CDF7F /* OnboardingSlide.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		848D9F4A284A38CD008CDF7F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				848D9F4C284A38FC008CDF7F /* Onboarding */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		848D9F4B284A38E6008CDF7F /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		848D9F4C284A38FC008CDF7F /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				848D9F4D284A3956008CDF7F /* OnboardingViewController.swift */,
+				848D9F54284A42C4008CDF7F /* OnboardingCollectionViewCell.swift */,
+			);
+			name = Onboarding;
+			sourceTree = "<group>";
+		};
+		848D9F4F284A3C9B008CDF7F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				848D9F50284A3CCB008CDF7F /* UIView+Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,9 +187,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				848D9F3A284A2415008CDF7F /* ViewController.swift in Sources */,
 				848D9F36284A2415008CDF7F /* AppDelegate.swift in Sources */,
+				848D9F4E284A3956008CDF7F /* OnboardingViewController.swift in Sources */,
+				848D9F53284A3F61008CDF7F /* OnboardingSlide.swift in Sources */,
+				848D9F51284A3CCB008CDF7F /* UIView+Extension.swift in Sources */,
 				848D9F38284A2415008CDF7F /* SceneDelegate.swift in Sources */,
+				848D9F55284A42C4008CDF7F /* OnboardingCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
