@@ -32,6 +32,7 @@ class OnboardingViewController: UIViewController {
         sliders = [OnboardingSlide(title: "Delicious Dishes", descriptoion: "Experience a variety of amazing dishes from different cultures around the world.", image: "slide2"),
                    OnboardingSlide(title: "World-Class Chefs", descriptoion: "Our dishes are prepared by only the best.", image: "slide1"),
                    OnboardingSlide(title: "Instant World-Wide Delivery", descriptoion: "Your orders will be delivered instantly irrespective of your location around the world.", image: "slide3")]
+        pageControl.numberOfPages = sliders.count
     }
     
     @IBAction func nextBtnClicked(_ sender: Any) {

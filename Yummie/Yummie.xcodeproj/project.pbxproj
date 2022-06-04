@@ -16,6 +16,7 @@
 		848D9F51284A3CCB008CDF7F /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848D9F50284A3CCB008CDF7F /* UIView+Extension.swift */; };
 		848D9F53284A3F61008CDF7F /* OnboardingSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848D9F52284A3F61008CDF7F /* OnboardingSlide.swift */; };
 		848D9F55284A42C4008CDF7F /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848D9F54284A42C4008CDF7F /* OnboardingCollectionViewCell.swift */; };
+		848D9F58284BA936008CDF7F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848D9F57284BA936008CDF7F /* HomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		848D9F50284A3CCB008CDF7F /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		848D9F52284A3F61008CDF7F /* OnboardingSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSlide.swift; sourceTree = "<group>"; };
 		848D9F54284A42C4008CDF7F /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = "<group>"; };
+		848D9F57284BA936008CDF7F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 		848D9F4A284A38CD008CDF7F /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				848D9F56284BA8DD008CDF7F /* Home */,
 				848D9F4C284A38FC008CDF7F /* Onboarding */,
 			);
 			path = Views;
@@ -114,6 +117,14 @@
 				848D9F50284A3CCB008CDF7F /* UIView+Extension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		848D9F56284BA8DD008CDF7F /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				848D9F57284BA936008CDF7F /* HomeViewController.swift */,
+			);
+			name = Home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -192,6 +203,7 @@
 				848D9F53284A3F61008CDF7F /* OnboardingSlide.swift in Sources */,
 				848D9F51284A3CCB008CDF7F /* UIView+Extension.swift in Sources */,
 				848D9F38284A2415008CDF7F /* SceneDelegate.swift in Sources */,
+				848D9F58284BA936008CDF7F /* HomeViewController.swift in Sources */,
 				848D9F55284A42C4008CDF7F /* OnboardingCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
