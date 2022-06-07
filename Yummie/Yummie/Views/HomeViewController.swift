@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import ProgressHUD
 
 class HomeViewController: UIViewController {
 
@@ -13,33 +14,37 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var popularCollectionView: UICollectionView!
     @IBOutlet weak var specialsCollectionView: UICollectionView!
     
-    var categories: [DishCategory] = [
-                                      .init(id: "id1", name: "Belarus Dish1", image:       "https://picsum.photos/100/200"),
-                                      .init(id: "id2", name: "Belarus Dish2", image: "https://picsum.photos/100/200"),
-                                      .init(id: "id3", name: "Belarus Dish3", image: "https://picsum.photos/100/200"),
-                                      .init(id: "id4", name: "Belarus Dish4", image: "https://picsum.photos/100/200"),
-                                      .init(id: "id5", name: "Belarus Dish5", image: "https://picsum.photos/100/200")]
-    
-    var populars: [Dish] = [
-        .init(id: "id1", name: "Pizza", description: "I like pizza", image: "https://picsum.photos/100/200", calories: 35),
-        .init(id: "id2", name: "Pizza2", description: "I like pizza", image: "https://picsum.photos/100/200", calories: 100),
-        .init(id: "id3", name: "Pizza3", description: "I like pizza", image: "https://picsum.photos/100/200", calories: 23)]
-    
-    var specials: [Dish] = [
-        .init(id: "id1", name: "HotDog", description: "I like hotdog", image: "https://picsum.photos/100/200", calories: 35),
-        .init(id: "id2", name: "HotDog2", description: "I like hotdog2", image: "https://picsum.photos/100/200", calories: 100)
-    ]
+    var categories: [DishCategory] = []
+    var populars: [Dish] = []
+    var specials: [Dish] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         categoryCollectionView.delegate = self
         categoryCollectionView.dataSource = self
         popularCollectionView.delegate = self
         popularCollectionView.dataSource = self
         specialsCollectionView.delegate = self
         specialsCollectionView.dataSource = self
+        
+        ProgressHUD.show()
         registerCells()
+        NetworkService.shared.fetchAllCategories {[weak self] result in
+            switch result {
+            case .success(let allDishes):
+                ProgressHUD.dismiss()
+                self?.categories = allDishes.categories ?? []
+                self?.populars = allDishes.populars ?? []
+                self?.specials = allDishes.specials ?? []
+                
+                self?.categoryCollectionView.reloadData()
+                self?.popularCollectionView.reloadData()
+                self?.specialsCollectionView.reloadData()
+            case .failure(let error):
+                ProgressHUD.showError(error.localizedDescription)
+            }
+        }
     }
     
     private func registerCells() {
@@ -88,7 +93,9 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == categoryCollectionView {
-            
+            let controller = ListDishesViewController.instantiate()
+            controller.category = categories[indexPath.row]
+            navigationController?.pushViewController(controller, animated: true)
         } else {
             let controller = DishDetailViewController.instantiate()
             controller.dish = collectionView == popularCollectionView ? populars[indexPath.row] : specials[indexPath.row]
